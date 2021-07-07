@@ -1,38 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-content: stretch;
+  place-items: stretch;
+  color: #d7e0ff;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  gap: 45px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #1e213f;
+  justify-content: space-between;
+  padding: 48px 48px 56px;
 }
 
-.App-link {
-  color: #61dafb;
+.modos {
+  display: flex;
+  gap: 8px;
+  background-color: #161932;
+  padding: 8px;
+  border-radius: 31px;
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.modos button {
+  border-radius: 26.5px;
+  padding: 16px 26px;
+  font-weight: bold;
+  background-color: transparent;
+  color: #d7e0ff;
+  border: 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modos button.modo-selecionado {
+  background-color: #f87070;
+  color: #161932;
+}
+
+.cronometro {
+  border-radius: 50%;
+  background-image: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+  box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+  padding: 22px;
+  display: grid;
+  place-content: stretch;
+  min-height: 360px;
+  z-index: 0;
+}
+
+.cronometro .container-tempo {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  background-color: #161932;
+  border-radius: 50%;
+  padding: 42px;
+}
+
+.tempo {
+  font-size: 100px;
+  line-height: 101px;
+  text-align: center;
+  letter-spacing: -5px;
+  color: #d7e0ff;
+  font-weight: bold;
+  font-family: Space mono, monospace;
+}
+.container-tempo button {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  color: inherit;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+}
+
+.btn-configuracao {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 567px) {
+  .contagem {
+    padding: 16px;
+  }  
+  .container-tempo {
+    padding: 38px;
   }
-  to {
-    transform: rotate(360deg);
+  .tempo {
+    font-size: 80px;
   }
 }
